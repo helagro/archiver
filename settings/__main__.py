@@ -1,33 +1,39 @@
 import json
-import os 
+import os
+from dotenv import load_dotenv
 
-__ENV_PATH = "settings" + os.sep + ".env"
 
-
-def readEnvLine(number):
-    with open(__ENV_PATH, 'r') as file:
-        for _ in range(number):
-            line = file.readline().rstrip("\n")
-            if not line:
-                return None
-            
-        return line
 
 
 
 class Settings:
-    settings = None
+    __settings = None
+    _instance = None
+
+
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super(Settings, cls).__new__(cls)
+        return cls._instance
+
 
     def __init__(self):
-        settingsPath = readEnvLine(1)
+        envPath = "settings" + os.sep + ".env"
+        load_dotenv(dotenv_path=envPath)
+        self.__megaPassword = os.getenv("MEGA_PASSWORD")
 
-        file = open(settingsPath)
-        self.settings = json.load(file)
+        file = open(os.getenv("SETTINGS_FILE"))
+        self.__settings = json.load(file)
+
 
 
     def __getitem__(self, key):
-        if key not in self.settings:
+        if key not in self.__settings:
             raise KeyError(f"'{key}' does not exist in settings")
         
-        return self.settings[key]
+        return self.__settings[key]
+    
+
+    def getMegaPassword(self):
+        return self.__megaPassword
     
