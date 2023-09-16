@@ -16,9 +16,9 @@ class Harddrive(Archive):
             shutil.move(path, newPath)
             os.utime(newPath, (time.time(), time.time()))
 
-            print("Archived:", path)
+            print(path)
         except OSError:
-            print("Could not archive", path)
+            print("Could not archive: ", path)
 
 
     def __getNewPath(self, path):

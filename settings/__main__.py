@@ -1,15 +1,25 @@
 import json
 import os 
 
+__ENV_PATH = "settings" + os.sep + ".env"
+
+
+def readEnvLine(number):
+    with open(__ENV_PATH, 'r') as file:
+        for _ in range(number):
+            line = file.readline().rstrip("\n")
+            if not line:
+                return None
+            
+        return line
+
+
 
 class Settings:
     settings = None
 
     def __init__(self):
-        # load path of settings file to use from .env
-        f = open("settings" + os.sep + ".env", "r")
-        settingsPath = f.readline()
-        f.close
+        settingsPath = readEnvLine(1)
 
         file = open(settingsPath)
         self.settings = json.load(file)
@@ -20,3 +30,4 @@ class Settings:
             raise KeyError(f"'{key}' does not exist in settings")
         
         return self.settings[key]
+    

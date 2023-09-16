@@ -20,7 +20,6 @@ archive: Archive = getArchive(
 
 
 def main():
-    print("= Archiver start =")
     if argument != "do":
         print("Add argument \"do\" to actually archive files")
 
