@@ -10,7 +10,6 @@ class ShouldArchive:
         self.defaultRules = defaultRules
 
 
-
     def eval(self, path, rules):
         if self.__isItemExcepted(path): return False
 
