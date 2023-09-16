@@ -1,0 +1,66 @@
+{
+    "folders": [
+        {
+            "path": "/Users/h/Downloads",
+            "rules": [
+                {
+                    "pattern": ".+.pdf",
+                    "archiveAfterDays": 50
+                },
+                {
+                    "pattern": ".+.dmg",
+                    "archiveAfterDays": 10
+                },
+                {
+                    "pattern": ".+",
+                    "archiveAfterDays": 30
+                }
+            ]
+        },
+        {
+            "path": "/Users/h/Documents",
+            "rules": [
+                {
+                    "pattern": "<folder>",
+                    "archiveAfterDays": 90
+                }
+            ]
+        },
+        {
+            "path": "/Users/h/Pictures",
+            "rules": [
+                {
+                    "pattern": ".+",
+                    "archiveAfterDays": 30
+                }
+            ]
+        },
+        {
+            "path": "/Users/h/Desktop",
+            "rules": [
+                {
+                    "pattern": ".+",
+                    "archiveAfterDays": 30
+                }
+            ]
+        },
+        {
+            "path": "/Users/h/Library/CloudStorage/GoogleDrive-3henrikl@gmail.com/My Drive/_TMP",
+            "rules": [
+                {
+                    "pattern": ".+",
+                    "archiveAfterDays": 90
+                }
+            ]
+        }
+    ],
+    "exclude": [
+        ".*/\\.DS_Store",
+        ".*/\\.localized",
+        ".*/scripts",
+        ".*/Photos Library\\.photoslibrary",
+        ".*/wallpaper\\.jpg"
+    ],
+    "defaultRules": [],
+    "archivePath": "/Volumes/shared/dump"
+}

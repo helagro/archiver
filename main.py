@@ -1,4 +1,3 @@
-import json
 import os 
 import time
 import math
@@ -6,6 +5,7 @@ import sys
 import re
 import shutil
 
+from settings.__main__ import get as getSettings
 
 argument = "" if len(sys.argv) < 2 else sys.argv[1]
 defaultRules = None
@@ -29,16 +29,6 @@ def main():
     for folderItem in settings["folders"]:
         archiveOldFiles(folderItem)
 
-
-def getSettings():
-    global settings
-
-    f = open("settings" + os.sep + ".env", "r")
-    settingsPath = f.readline()
-    f.close
-
-    file = open(settingsPath)
-    return json.load(file)["archiver"]
 
 
 def archiveOldFiles(folderItem):
