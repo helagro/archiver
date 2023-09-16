@@ -3,28 +3,20 @@ import time
 import math
 import sys
 import re
-import shutil
 
-from settings.__main__ import get as getSettings
+from settings.__main__ import Settings
+
 
 argument = "" if len(sys.argv) < 2 else sys.argv[1]
-defaultRules = None
-exclude = None
-archivePath = None
+settings = Settings()
+
 
 def main():
-    global defaultRules
-    global exclude
-    global archivePath
 
     print("= Archiver start =")
     if argument != "do":
         print("Add argument \"do\" to actually archive files")
 
-    settings = getSettings()
-    exclude = settings["exclude"]
-    archivePath = settings["archivePath"]
-    defaultRules = settings["defaultRules"]
 
     for folderItem in settings["folders"]:
         archiveOldFiles(folderItem)
@@ -42,7 +34,10 @@ def archiveOldFiles(folderItem):
 
         itemAge = getItemAge(itemPath)
         if itemAge >= rule["archiveAfterDays"]:
-            archiveItem(itemPath)
+            if argument == "do":
+                archiveItem(itemPath)
+            else:
+                print("Would have archived:", itemPath)
 
 
 def getItemAge(path):
@@ -58,7 +53,7 @@ def getItemAge(path):
 
 
 def isItemExcepted(itemPath):
-    for exception in exclude:
+    for exception in settings["exclude"]:
         if re.match(exception, itemPath):
             return True
 
@@ -66,7 +61,7 @@ def isItemExcepted(itemPath):
 
 
 def getFirstMatchingRule(rulesForFolder, itemPath):
-    rules = rulesForFolder + defaultRules
+    rules = rulesForFolder + settings["defaultRules"]
     for rule in rules:
         ruleMatches = doesRuleMatch(rule["pattern"], itemPath)
         if ruleMatches:
@@ -81,30 +76,6 @@ def doesRuleMatch(rulePattern, itemPath):
     return False
 
 
-def archiveItem(path):
-    newPath = getNewPath(path)
 
-    if argument == "do":
-        try:
-            shutil.move(path, newPath)
-            os.utime(newPath, (time.time(), time.time()))
-
-            print("Archived:", path)
-        except OSError:
-            print("Could not archive", path)
-    else:
-        print("Would have archived:", path)
-
-
-def getNewPath(path):
-    basePath = archivePath + os.sep + os.path.basename(path)
-    path = basePath
-    num = 1
-
-    while os.path.exists(path):
-        path = basePath + f" ({num})"
-        num += 1
-
-    return path
 
 main()

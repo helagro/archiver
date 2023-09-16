@@ -62,5 +62,6 @@
         ".*/wallpaper\\.jpg"
     ],
     "defaultRules": [],
+    "archive": "mega",
     "archivePath": "/Volumes/shared/dump"
 }
