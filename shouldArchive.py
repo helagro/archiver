@@ -10,11 +10,18 @@ class ShouldArchive:
         self.defaultRules = defaultRules
 
 
-    def eval(self, path, rules):
-        if self.__isItemExcepted(path): return False
+    def getFirstMatchingRule(self, rulesForFolder, itemPath):
+        rules = rulesForFolder + self.defaultRules
+        for rule in rules:
+            ruleMatches = self.__doesRuleMatch(rule["pattern"], itemPath)
+            if ruleMatches:
+                return rule
 
-        rule = self.__getFirstMatchingRule(rules, path)
+
+    def eval(self, path, rule):
         if rule is None: return False
+        if self.__isItemExcepted(path): return False
+        if not os.path.exists(path): return False
 
         age = self.__getItemAge(path)
         return age >= rule["archiveAfterDays"]
@@ -26,14 +33,6 @@ class ShouldArchive:
                 return True
 
         return False
-
-
-    def __getFirstMatchingRule(self, rulesForFolder, itemPath):
-        rules = rulesForFolder + self.defaultRules
-        for rule in rules:
-            ruleMatches = self.__doesRuleMatch(rule["pattern"], itemPath)
-            if ruleMatches:
-                return rule
 
 
     def __doesRuleMatch(self, rulePattern, itemPath):

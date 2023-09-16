@@ -1,6 +1,6 @@
 import os 
 import sys
-
+import delete
 from settings.__main__ import Settings
 from shouldArchive import ShouldArchive
 from archives.archive import Archive, getArchive
@@ -34,12 +34,17 @@ def archiveOldFiles(folderItem):
         # should archive file?
         itemPath = folderItem["path"] + os.sep + itemName
         rules = folderItem["rules"]
-        doArchive = shouldArchive.eval(itemPath, rules)
+
+        rule = shouldArchive.getFirstMatchingRule(rules, itemPath)
+        doArchive = shouldArchive.eval(itemPath, rule)
 
         # archive file
         if doArchive:
             if argument == "do":
-                archive.archive(itemPath)
+                if "justDelete" in rule and rule["justDelete"]:
+                    delete.any(itemPath)
+                else:
+                    archive.archive(itemPath)
             else:
                 print("Would have archived:", itemPath)
 

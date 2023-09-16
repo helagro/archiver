@@ -9,11 +9,22 @@
                 },
                 {
                     "pattern": ".+.dmg",
-                    "archiveAfterDays": 10
+                    "archiveAfterDays": 10,
+                    "justDelete": true
+                },
+                {
+                    "pattern": ".+.app",
+                    "archiveAfterDays": 10,
+                    "justDelete": true
+                },
+                {
+                    "pattern": ".+.pkg",
+                    "archiveAfterDays": 10,
+                    "justDelete": true
                 },
                 {
                     "pattern": ".+",
-                    "archiveAfterDays": 30
+                    "archiveAfterDays": 28
                 }
             ]
         },
@@ -41,15 +52,6 @@
                 {
                     "pattern": ".+",
                     "archiveAfterDays": 30
-                }
-            ]
-        },
-        {
-            "path": "/Users/h/Library/CloudStorage/GoogleDrive-3henrikl@gmail.com/My Drive/_TMP",
-            "rules": [
-                {
-                    "pattern": ".+",
-                    "archiveAfterDays": 90
                 }
             ]
         }
