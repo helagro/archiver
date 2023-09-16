@@ -14,7 +14,7 @@ class Mega(Archive):
 
 
     def archive(self, path):
-        self.api.upload(path)
+        result = self.api.upload(path)
         os.remove(path)
 
-        print(path)
+        print(path, result)
