@@ -54,6 +54,15 @@
                     "archiveAfterDays": 30
                 }
             ]
+        },
+        {
+            "path": "/Users/h/Library/Mobile Documents/iCloud~md~obsidian/Documents/obsidian/_TMP",
+            "rules": [
+                {
+                    "pattern": ".+",
+                    "archiveAfterDays": 60
+                }
+            ]
         }
     ],
     "exclude": [
