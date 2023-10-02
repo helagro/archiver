@@ -63,6 +63,15 @@
                     "archiveAfterDays": 60
                 }
             ]
+        },
+        {
+            "path": "/Users/h/backups",
+            "rules": [
+                {
+                    "pattern": ".+",
+                    "archiveAfterDays": 30
+                }
+            ]
         }
     ],
     "exclude": [
