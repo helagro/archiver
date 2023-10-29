@@ -4,21 +4,11 @@
             "path": "/Users/h/Downloads",
             "rules": [
                 {
-                    "pattern": ".+.pdf",
+                    "pattern": ".+\\.pdf",
                     "archiveAfterDays": 50
                 },
                 {
-                    "pattern": ".+.dmg",
-                    "archiveAfterDays": 10,
-                    "justDelete": true
-                },
-                {
-                    "pattern": ".+.app",
-                    "archiveAfterDays": 10,
-                    "justDelete": true
-                },
-                {
-                    "pattern": ".+.pkg",
+                    "pattern": ".+\\.(dmg|app|pkg)",
                     "archiveAfterDays": 10,
                     "justDelete": true
                 },
@@ -61,6 +51,15 @@
                 {
                     "pattern": ".+",
                     "archiveAfterDays": 60
+                }
+            ]
+        },
+        {
+            "path": "/Users/h/Documents/obsidian",
+            "rules": [
+                {
+                    "pattern": "/Users/h/Documents/obsidian/Untitled( [0-9]+)?\\.md",
+                    "archiveAfterDays": 0
                 }
             ]
         },
