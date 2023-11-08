@@ -14,7 +14,7 @@
                 },
                 {
                     "pattern": ".+",
-                    "archiveAfterDays": 28
+                    "archiveAfterDays": 21
                 }
             ]
         },
@@ -22,8 +22,8 @@
             "path": "/Users/h/Documents",
             "rules": [
                 {
-                    "pattern": "<folder>",
-                    "archiveAfterDays": 14
+                    "pattern": ".+",
+                    "archiveAfterDays": 28
                 }
             ]
         },
