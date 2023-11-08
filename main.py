@@ -46,7 +46,7 @@ def archiveOldFiles(folderItem):
                 else:
                     archive.archive(itemPath)
             else:
-                print("Would have archived:", itemPath)
+                print(f"Would have archived: {itemPath}")
 
 
 

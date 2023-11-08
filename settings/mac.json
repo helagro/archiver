@@ -23,7 +23,7 @@
             "rules": [
                 {
                     "pattern": "<folder>",
-                    "archiveAfterDays": 60
+                    "archiveAfterDays": 14
                 }
             ]
         },
@@ -32,7 +32,7 @@
             "rules": [
                 {
                     "pattern": ".+",
-                    "archiveAfterDays": 30
+                    "archiveAfterDays": 21
                 }
             ]
         },
@@ -41,7 +41,7 @@
             "rules": [
                 {
                     "pattern": ".+",
-                    "archiveAfterDays": 30
+                    "archiveAfterDays": 21
                 }
             ]
         },
@@ -50,7 +50,7 @@
             "rules": [
                 {
                     "pattern": ".+",
-                    "archiveAfterDays": 50
+                    "archiveAfterDays": 28
                 }
             ]
         },
@@ -68,7 +68,7 @@
             "rules": [
                 {
                     "pattern": ".+",
-                    "archiveAfterDays": 30
+                    "archiveAfterDays": 28
                 }
             ]
         }
@@ -78,7 +78,9 @@
         ".*/\\.localized",
         ".*/scripts",
         ".*/Photos Library\\.photoslibrary",
-        ".*/wallpaper\\.jpg"
+        ".*/wallpaper\\.jpg",
+        ".*/Photo Booth Library",
+        ".*/Desktop/_CACHE"
     ],
     "defaultRules": [],
     "archiveType": "mega",

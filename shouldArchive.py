@@ -23,8 +23,8 @@ class ShouldArchive:
         if self.__isItemExcepted(path): return False
         if not os.path.exists(path): return False
 
-        age = self.__getItemAge(path)
-        return age >= rule["archiveAfterDays"]
+        minAge = rule["archiveAfterDays"]
+        return self.__oldEnough(path, minAge)
 
 
     def __isItemExcepted(self, itemPath):
@@ -43,7 +43,7 @@ class ShouldArchive:
         return False
     
 
-    def __getItemAge(self, path):
+    def __oldEnough(self, path, minAge):
         timeStamps = [
             os.path.getmtime(path), #modified
             os.path.getatime(path), #accessed
@@ -51,5 +51,21 @@ class ShouldArchive:
         ]
         
         ageInSeconds = time.time() - max(timeStamps)
-        ageInDays = ageInSeconds / 3600 / 24
-        return math.floor(ageInDays)
+        ageInDays = math.floor(ageInSeconds / 3600 / 24)
+
+        if(ageInDays >= minAge):
+            if(os.path.isdir(path)):
+                return self.__folderOldEnough(path, minAge)
+            else:
+                return True
+        else:
+            return False
+
+
+    def __folderOldEnough(self, path, minAge):
+        for itemName in os.listdir(path):
+            itemPath = path + os.sep + itemName
+            oldEnough = self.__oldEnough(itemPath, minAge)
+            if not oldEnough: return False
+
+        return True
