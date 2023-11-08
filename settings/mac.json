@@ -23,7 +23,7 @@
             "rules": [
                 {
                     "pattern": "<folder>",
-                    "archiveAfterDays": 90
+                    "archiveAfterDays": 60
                 }
             ]
         },
@@ -50,7 +50,7 @@
             "rules": [
                 {
                     "pattern": ".+",
-                    "archiveAfterDays": 60
+                    "archiveAfterDays": 50
                 }
             ]
         },
