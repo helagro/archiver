@@ -46,7 +46,7 @@
             ]
         },
         {
-            "path": "/Users/h/Documents/obsidian/_TMP",
+            "path": "/Users/h/Documents/obsidian/tmp",
             "rules": [
                 {
                     "pattern": ".+",
