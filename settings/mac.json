@@ -71,6 +71,15 @@
                     "archiveAfterDays": 28
                 }
             ]
+        },
+        {
+            "path": "/Users/h/Library/Mobile Documents/com~apple~CloudDocs/temporary",
+            "rules":[
+                {
+                    "pattern": ".+",
+                    "archiveAfterDays": 28
+                }
+            ]
         }
     ],
     "exclude": [
@@ -79,8 +88,7 @@
         ".*/scripts",
         ".*/Photos Library\\.photoslibrary",
         ".*/wallpaper\\.jpg",
-        ".*/Photo Booth Library",
-        ".*/Desktop/_CACHE"
+        ".*/Photo Booth Library"
     ],
     "defaultRules": [],
     "archiveType": "mega",
