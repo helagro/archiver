@@ -9,12 +9,16 @@
                 },
                 {
                     "pattern": ".+\\.(dmg|app|pkg)",
-                    "archiveAfterDays": 10,
+                    "archiveAfterDays": 3,
                     "justDelete": true
                 },
                 {
                     "pattern": ".+",
                     "archiveAfterDays": 21
+                },
+                {
+                    "pattern": ".+\\.zip",
+                    "archiveAfterDays": 10
                 }
             ]
         },
@@ -60,15 +64,6 @@
                 {
                     "pattern": "/Users/h/Documents/obsidian/Untitled( [0-9]+)?\\.md",
                     "archiveAfterDays": 0
-                }
-            ]
-        },
-        {
-            "path": "/Users/h/backups",
-            "rules": [
-                {
-                    "pattern": ".+",
-                    "archiveAfterDays": 28
                 }
             ]
         },
