@@ -44,21 +44,24 @@ class ShouldArchive:
     
 
     def __oldEnough(self, path, minAge):
-        timeStamps = [
-            os.path.getmtime(path), #modified
-            os.path.getatime(path), #accessed
-            os.path.getctime(path) #changed
-        ]
-        
-        ageInSeconds = time.time() - max(timeStamps)
-        ageInDays = math.floor(ageInSeconds / 3600 / 24)
+        try:
+            timeStamps = [
+                os.path.getmtime(path), #modified
+                os.path.getatime(path), #accessed
+                os.path.getctime(path) #changed
+            ]
+            
+            ageInSeconds = time.time() - max(timeStamps)
+            ageInDays = math.floor(ageInSeconds / 3600 / 24)
 
-        if(ageInDays >= minAge):
-            if(os.path.isdir(path)):
-                return self.__folderOldEnough(path, minAge)
+            if(ageInDays >= minAge):
+                if(os.path.isdir(path)):
+                    return self.__folderOldEnough(path, minAge)
+                else:
+                    return True
             else:
-                return True
-        else:
+                return False
+        except:
             return False
 
 
