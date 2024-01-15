@@ -5,7 +5,7 @@
             "rules": [
                 {
                     "pattern": ".+\\.pdf",
-                    "archiveAfterDays": 42
+                    "archiveAfterDays": 28
                 },
                 {
                     "pattern": ".+\\.(dmg|app|pkg)",
@@ -14,7 +14,7 @@
                 },
                 {
                     "pattern": ".+",
-                    "archiveAfterDays": 21
+                    "archiveAfterDays": 14
                 },
                 {
                     "pattern": ".+\\.zip",
