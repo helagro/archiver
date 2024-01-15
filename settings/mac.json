@@ -14,7 +14,7 @@
                 },
                 {
                     "pattern": ".+",
-                    "archiveAfterDays": 14
+                    "archiveAfterDays": 7
                 },
                 {
                     "pattern": ".+\\.zip",
