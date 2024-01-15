@@ -5,7 +5,7 @@
             "rules": [
                 {
                     "pattern": ".+\\.pdf",
-                    "archiveAfterDays": 28
+                    "archiveAfterDays": 21
                 },
                 {
                     "pattern": ".+\\.(dmg|app|pkg)",
@@ -80,7 +80,6 @@
     "exclude": [
         ".*/\\.DS_Store",
         ".*/\\.localized",
-        ".*/scripts",
         ".*/Photos Library\\.photoslibrary",
         ".*/wallpaper\\.jpg",
         ".*/Photo Booth Library"
