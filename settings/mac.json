@@ -27,7 +27,7 @@
             "rules": [
                 {
                     "pattern": ".+",
-                    "archiveAfterDays": 28
+                    "archiveAfterDays": 128
                 }
             ]
         },
