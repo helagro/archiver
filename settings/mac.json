@@ -23,11 +23,11 @@
             ]
         },
         {
-            "path": "/Users/h/Documents",
+            "path": "/Users/h/Developer",
             "rules": [
                 {
                     "pattern": ".+",
-                    "archiveAfterDays": 128
+                    "archiveAfterDays": 21
                 }
             ]
         },
@@ -72,7 +72,7 @@
             "rules":[
                 {
                     "pattern": ".+",
-                    "archiveAfterDays": 28
+                    "archiveAfterDays": 21
                 }
             ]
         }
