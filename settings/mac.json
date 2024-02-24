@@ -82,7 +82,8 @@
         ".*/\\.localized",
         ".*/Photos Library\\.photoslibrary",
         ".*/wallpaper\\.jpg",
-        ".*/Photo Booth Library"
+        ".*/Photo Booth Library",
+        ".*/terminal-timer"
     ],
     "defaultRules": [],
     "archiveType": "mega",
