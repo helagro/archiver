@@ -45,12 +45,13 @@
             "rules": [
                 {
                     "pattern": ".+",
-                    "archiveAfterDays": 7
+                    "archiveAfterDays": 2,
+                    "ignoreAccess": true
                 }
             ]
         },
         {
-            "path": "/Users/h/Documents/obsidian/tmp",
+            "path": "/Users/h/obsidian/tmp",
             "rules": [
                 {
                     "pattern": ".+",
@@ -59,7 +60,7 @@
             ]
         },
         {
-            "path": "/Users/h/Documents/obsidian",
+            "path": "/Users/h//obsidian",
             "rules": [
                 {
                     "pattern": "/Users/h/Documents/obsidian/Untitled( [0-9]+)?\\.md",
@@ -72,7 +73,8 @@
             "rules":[
                 {
                     "pattern": ".+",
-                    "archiveAfterDays": 21
+                    "archiveAfterDays": 21,
+                    "ignoreAccess": true
                 }
             ]
         }

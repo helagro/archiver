@@ -24,7 +24,8 @@ class ShouldArchive:
         if not os.path.exists(path): return False
 
         minAge = rule["archiveAfterDays"]
-        return self.__oldEnough(path, minAge)
+        ignoreAccess = "ignoreAccess" in rule and rule["ignoreAccess"]
+        return self.__oldEnough(path, minAge, ignoreAccess)
 
 
     def __isItemExcepted(self, itemPath):
@@ -43,13 +44,15 @@ class ShouldArchive:
         return False
     
 
-    def __oldEnough(self, path, minAge):
+    def __oldEnough(self, path, minAge, ignoreAccess):
         try:
             timeStamps = [
                 os.path.getmtime(path), #modified
-                os.path.getatime(path), #accessed
                 os.path.getctime(path) #changed
             ]
+
+            if not ignoreAccess:
+                timeStamps.append(os.path.getatime(path))
             
             ageInSeconds = time.time() - max(timeStamps)
             ageInDays = math.floor(ageInSeconds / 3600 / 24)
