@@ -1,95 +1,86 @@
 {
-    "folders": [
+  "folders": [
+    {
+      "path": "/Users/h/Downloads",
+      "rules": [
         {
-            "path": "/Users/h/Downloads",
-            "rules": [
-                {
-                    "pattern": ".+\\.pdf",
-                    "archiveAfterDays": 21
-                },
-                {
-                    "pattern": ".+\\.(dmg|app|pkg)",
-                    "archiveAfterDays": 3,
-                    "justDelete": true
-                },
-                {
-                    "pattern": ".+",
-                    "archiveAfterDays": 7
-                },
-                {
-                    "pattern": ".+\\.zip",
-                    "archiveAfterDays": 7
-                }
-            ]
+          "pattern": ".+\\.pdf",
+          "archiveAfterDays": 21
         },
         {
-            "path": "/Users/h/Developer",
-            "rules": [
-                {
-                    "pattern": ".+",
-                    "archiveAfterDays": 21
-                }
-            ]
+          "pattern": ".+\\.(dmg|app|pkg)",
+          "archiveAfterDays": 3,
+          "justDelete": true
         },
         {
-            "path": "/Users/h/Pictures",
-            "rules": [
-                {
-                    "pattern": ".+",
-                    "archiveAfterDays": 21
-                }
-            ]
+          "pattern": ".+",
+          "archiveAfterDays": 7
         },
         {
-            "path": "/Users/h/Desktop",
-            "rules": [
-                {
-                    "pattern": ".+",
-                    "archiveAfterDays": 2,
-                    "ignoreAccess": true
-                }
-            ]
-        },
-        {
-            "path": "/Users/h/obsidian/tmp",
-            "rules": [
-                {
-                    "pattern": ".+",
-                    "archiveAfterDays": 28
-                }
-            ]
-        },
-        {
-            "path": "/Users/h//obsidian",
-            "rules": [
-                {
-                    "pattern": "/Users/h/Documents/obsidian/Untitled( [0-9]+)?\\.md",
-                    "archiveAfterDays": 0
-                }
-            ]
-        },
-        {
-            "path": "/Users/h/Library/Mobile Documents/com~apple~CloudDocs/temporary",
-            "rules":[
-                {
-                    "pattern": ".+",
-                    "archiveAfterDays": 21,
-                    "ignoreAccess": true
-                }
-            ]
+          "pattern": ".+\\.zip",
+          "archiveAfterDays": 7
         }
-    ],
-    "exclude": [
-        ".*/\\.DS_Store",
-        ".*/\\.localized",
-        ".*/Photos Library\\.photoslibrary",
-        ".*/wallpaper\\.jpg",
-        ".*/Photo Booth Library",
-        ".*/terminal-timer"
-    ],
-    "defaultRules": [],
-    "archiveType": "mega",
-    "archiveSettings": {
-        "email": "helagro@outlook.com"
+      ]
+    },
+    {
+      "path": "/Users/h/Developer",
+      "rules": [
+        {
+          "pattern": ".+",
+          "archiveAfterDays": 14
+        }
+      ]
+    },
+    {
+      "path": "/Users/h/Pictures",
+      "rules": [
+        {
+          "pattern": ".+",
+          "archiveAfterDays": 21
+        }
+      ]
+    },
+    {
+      "path": "/Users/h/Desktop",
+      "rules": [
+        {
+          "pattern": ".+",
+          "archiveAfterDays": -1,
+          "asap": true
+        }
+      ]
+    },
+    {
+      "path": "/Users/h/Dropbox/Apps/remotely-save/vault/tmp",
+      "rules": [
+        {
+          "pattern": ".+",
+          "archiveAfterDays": 28
+        }
+      ]
+    },
+    {
+      "path": "/Users/h/Library/Mobile Documents/com~apple~CloudDocs/temporary",
+      "rules": [
+        {
+          "pattern": ".+",
+          "archiveAfterDays": 21,
+          "ignoreAccess": true
+        }
+      ]
     }
+  ],
+  "exclude": [
+    ".*/\\.DS_Store",
+    ".*/\\.localized",
+    ".*/Photos Library\\.photoslibrary",
+    ".*/wallpaper\\.jpg",
+    ".*/Photo Booth Library",
+    ".*/terminal-timer"
+  ],
+  "defaultRules": [],
+  "archiveType": "mega",
+  "archiveSettings": {
+    "email": "helagro@outlook.com"
+  }
 }

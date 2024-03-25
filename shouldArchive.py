@@ -22,6 +22,7 @@ class ShouldArchive:
         if rule is None: return False
         if self.__isItemExcepted(path): return False
         if not os.path.exists(path): return False
+        if "asap" in rule and rule["asap"]: return True
 
         minAge = rule["archiveAfterDays"]
         ignoreAccess = "ignoreAccess" in rule and rule["ignoreAccess"]
